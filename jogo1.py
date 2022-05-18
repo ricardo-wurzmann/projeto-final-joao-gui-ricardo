@@ -1,6 +1,8 @@
 #import bibliotecas
 import pygame
 import random
+from os import path
+from config import IMG_DIR, BLACK, FPS, GAME, QUIT
 
 
 pygame.init()
@@ -13,11 +15,11 @@ tempo = pygame.time.Clock()
 
 window = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption('Jogo do Dino')
+
 personagem_width = 40
 personagem_height = 35
-font = pygame.font.SysFont(None, 48)
-background = pygame.image.load('projeto-final-joao-gui-ricardo/fundo1.png').convert()
-personagem_img = pygame.image.load('projeto-final-joao-gui-ricardo/dino.png').convert_alpha()
+background = pygame.image.load(path.join(IMG_DIR,'fundo1.png')).convert()
+personagem_img = pygame.image.load(path.join(IMG_DIR,'dino.png')).convert_alpha()
 dino_img = pygame.transform.scale(personagem_img, (personagem_width, personagem_height))
 
 
@@ -38,7 +40,7 @@ class Dino(pygame.sprite.Sprite):
 #repetir
 game = True
 #ajuste de velocidade
-tempo = pygame.time.clock()
+tempo = pygame.time.Clock()
 player = Dino(dino_img)
 
 all_sprites = pygame.sprite.Group()

@@ -1,12 +1,16 @@
 from os import path
+import pygame
 
 # Estabelece a pasta que contem as figuras e sons.
-IMG_DIR = path.join(path.dirname(__file__), 'assets', 'img')
-SND_DIR = path.join(path.dirname(__file__), 'assets', 'snd')
-FNT_DIR = path.join(path.dirname(__file__), 'assets', 'font')
+
+
+IMG_DIR = path.join(path.dirname(__file__), 'Imagens')
+SND_DIR = path.join(path.dirname(__file__), 'Sons')
+
+
 
 # Dados gerais do jogo.
-WIDTH = 480 # Largura da tela
+WIDTH = 300 # Largura da tela
 HEIGHT = 600 # Altura da tela
 FPS = 60 # Frames por segundo
 
