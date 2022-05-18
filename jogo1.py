@@ -16,7 +16,7 @@ pygame.display.set_caption('Jogo do Dino')
 personagem_width = 40
 personagem_height = 35
 font = pygame.font.SysFont(None, 48)
-background = pygame.image.load('projeto-final-joao-gui-ricardo/fundo.png').convert()
+background = pygame.image.load('projeto-final-joao-gui-ricardo/fundo1.png').convert()
 personagem_img = pygame.image.load('projeto-final-joao-gui-ricardo/dino.png').convert_alpha()
 dino_img = pygame.transform.scale(personagem_img, (personagem_width, personagem_height))
 
