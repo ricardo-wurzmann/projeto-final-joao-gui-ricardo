@@ -2,15 +2,12 @@
 import pygame
 import random
 from os import path
-from config import IMG_DIR, BLACK, FPS, GAME, QUIT
+from config import IMG_DIR, BLACK, FPS, GAME, QUIT, WIDTH, HEIGHT
+import telainicial
 
 
 pygame.init()
 
-#tela principal
-WIDTH = 480
-HEIGHT = 600
-FPS = 40
 tempo = pygame.time.Clock()
 
 window = pygame.display.set_mode((WIDTH, HEIGHT))
