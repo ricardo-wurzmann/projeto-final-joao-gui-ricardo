@@ -37,7 +37,7 @@ QUIT = 2
 GRAVIDADE = 2
 
 #tamanho do pulo do jogador
-tam_pulo = 3
+TAM_PULO = 3
 
 #distancia do pulo pro chao
 CHAO = HEIGHT*5/4
