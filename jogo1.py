@@ -32,7 +32,6 @@ class Dino(pygame.sprite.Sprite):
         self.speedx = 0
 
     def update(self):
-        self.rect.x += self.speedx
 
 #repetir
 game = True
