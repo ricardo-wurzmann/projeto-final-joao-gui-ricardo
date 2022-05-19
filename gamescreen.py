@@ -34,7 +34,7 @@ class Dino(pygame.sprite.Sprite):
     def update(self):
 
 #repetir
-game = True
+GAME = True
 #ajuste de velocidade
 tempo = pygame.time.Clock()
 player = Dino(dino_img)
@@ -43,7 +43,7 @@ all_sprites = pygame.sprite.Group()
 player = personagem_img()
 all_sprites.add(player)
 
-while game:
+while GAME:
     tempo.tick(FPS)
     for i in pygame.event.get():
         if i.type == pygame.QUIT():
