@@ -32,3 +32,17 @@ YELLOW = (255, 255, 0)
 INIT = 0
 GAME = 1
 QUIT = 2
+
+#gravidade 
+GRAVIDADE = 2
+
+#tamanho do pulo do jogador
+tam_pulo = 3
+
+#distancia do pulo pro chao
+CHAO = HEIGHT*5/4
+
+#estados do jogador
+PARADO = 0
+PULANDO = 1
+CAINDO = 2
