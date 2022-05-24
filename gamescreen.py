@@ -10,7 +10,6 @@ from config import IMG_DIR, BLACK, FPS, GAME, QUIT, WIDTH, HEIGHT, PARADO, PULAN
 import telainicial
 
 
-
 pygame.init()
 
 tempo = pygame.time.Clock()
