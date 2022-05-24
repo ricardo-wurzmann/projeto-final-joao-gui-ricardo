@@ -31,7 +31,8 @@ YELLOW = (255, 255, 0)
 # Estados para controle do fluxo da aplicação
 INIT = 0
 GAME = 1
-QUIT = 2
+END = 2
+QUIT = 3
 
 #gravidade 
 GRAVIDADE = 2
@@ -46,3 +47,6 @@ CHAO = HEIGHT*5/4
 PARADO = 0
 PULANDO = 1
 CAINDO = 2
+
+#velocidade do mundo
+VEL_MUNDO = -10

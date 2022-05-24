@@ -11,10 +11,11 @@ import telainicial
 
 
 pygame.init()
+pygame.mixer.init()
 
-tempo = pygame.time.Clock()
-
+# ----- Gera tela principal
 window = pygame.display.set_mode((WIDTH, HEIGHT))
+tempo = pygame.time.Clock()
 pygame.display.set_caption('Jogo do Dino')
 
 personagem_width = 80
@@ -22,6 +23,7 @@ personagem_height = 140
 background = pygame.image.load(path.join(IMG_DIR,'fundo1.png')).convert()
 personagem_img = pygame.image.load(path.join(IMG_DIR,'dino.png')).convert_alpha()
 dino_img = pygame.transform.scale(personagem_img, (personagem_width, personagem_height))
+background = pygame.transform.scale(background, (WIDTH, HEIGHT))
 
 
 #classes
@@ -85,8 +87,21 @@ def gamescreen(Screen):
     # Depois de desenhar tudo, inverte o display.
     pygame.display.flip()
 
-pygame.init()
 
-Screen = pygame.display.set_mode((600, 300))
+screen = pygame.display.set_mode((600, 300))
+
+telainicial.telainical(screen)
+
 
 pygame.quit()
+
+
+'''while GAME:
+        tempo.tick(FPS)
+        for i in pygame.event.get():
+            if i.type == pygame.QUIT():
+                GAME = False
+            
+            if i.type == pygame.KEYDOWN:
+                if i.key == pygame.K_SPACE or i.key == pygame.K_UP:
+                    Dino.pulo()'''
