@@ -12,10 +12,11 @@ import telainicial
 
 
 pygame.init()
+pygame.mixer.init()
 
-tempo = pygame.time.Clock()
-
+# ----- Gera tela principal
 window = pygame.display.set_mode((WIDTH, HEIGHT))
+tempo = pygame.time.Clock()
 pygame.display.set_caption('Jogo do Dino')
 
 personagem_width = 80
@@ -87,8 +88,10 @@ def gamescreen(Screen):
     # Depois de desenhar tudo, inverte o display.
     pygame.display.flip()
 
-pygame.init()
 
-Screen = pygame.display.set_mode((600, 300))
+screen = pygame.display.set_mode((600, 300))
+
+telainicial.telainical(screen)
+
 
 pygame.quit()

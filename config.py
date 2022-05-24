@@ -46,3 +46,6 @@ CHAO = HEIGHT*5/4
 PARADO = 0
 PULANDO = 1
 CAINDO = 2
+
+#velocidade do mundo
+VEL_MUNDO = -10
