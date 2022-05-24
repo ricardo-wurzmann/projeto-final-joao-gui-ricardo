@@ -23,6 +23,7 @@ personagem_height = 140
 background = pygame.image.load(path.join(IMG_DIR,'fundo1.png')).convert()
 personagem_img = pygame.image.load(path.join(IMG_DIR,'dino.png')).convert_alpha()
 dino_img = pygame.transform.scale(personagem_img, (personagem_width, personagem_height))
+background = pygame.transform.scale(background, (WIDTH, HEIGHT))
 
 
 #classes
