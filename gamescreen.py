@@ -6,8 +6,8 @@ from sprites import Dino
     
 def gamescreen(Screen):
 
-    personagem_width = 80
-    personagem_height = 140
+    personagem_width = 60
+    personagem_height = 120
     background = pygame.image.load(path.join(IMG_DIR,'fundo1.png')).convert()
     personagem_img = pygame.image.load(path.join(IMG_DIR,'dino.png')).convert_alpha()
     dino_img = pygame.transform.scale(personagem_img, (personagem_width, personagem_height))
