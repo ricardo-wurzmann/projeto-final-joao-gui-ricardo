@@ -1,14 +1,12 @@
 import pygame
 from os import path
-from config import IMG_DIR, BLACK, FPS, GAME, QUIT, INIT
+from config import IMG_DIR, BLACK, FPS, GAME, QUIT, INIT, WIDTH, HEIGHT
 from gamescreen import gamescreen
 from telainicial import telainicial
 
 pygame.init()
 
 # ----- Gera tela principal
-WIDTH = 600
-HEIGHT = 300
 window = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption('Jogo do Dinossauro')
 
