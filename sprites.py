@@ -12,6 +12,9 @@ class Dino(pygame.sprite.Sprite):
         self.rect.centerx = (WIDTH / 3)
         self.rect.top = 0
         self.speedy = 0
+        self.rect.centerx = WIDTH / 4
+        self.rect.bottom = int(HEIGHT * 5 / 8)
+
     def update(self):
         self.speedy += GRAVIDADE
         if self.speedy > 0:
@@ -26,6 +29,19 @@ class Dino(pygame.sprite.Sprite):
         if self.state == PARADO:
             self.speedy -= TAM_PULO
             self.state = PULANDO
+
+
+class Cacto(pygame.sprite.Sprite):
+    def __init__(self, Cacto_img, x, y, speedx):
+            pygame.sprite.Sprite.__init__(self)
+            tile_img = pygame.transform.scale(tile_img, (TILE_SIZE, TILE_SIZE))
+            self.rect = self.image.get_rect()
+            self.rect.x = x
+            self.rect.y = y
+            self.speedx = speedx
+
+    def update(self):
+        self.rect.x += self.speedx
 
 '''class Cacto(pygame.sprite.Sprite):
     def __init__(self, cacto_img):
