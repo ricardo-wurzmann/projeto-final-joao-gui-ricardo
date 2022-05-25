@@ -12,7 +12,6 @@ class Dino(pygame.sprite.Sprite):
         self.rect.centerx = (WIDTH / 3)
         self.rect.top = 0
         self.speedy = 0
-        self.rect.centerx = WIDTH / 4
         self.rect.bottom = int(HEIGHT * 5 / 8)
 
     def update(self):
