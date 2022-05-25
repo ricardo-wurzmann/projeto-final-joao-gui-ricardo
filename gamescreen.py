@@ -62,8 +62,8 @@ def gamescreen(Screen):
             if block.rect.right < 0:
                 # Destrói o bloco e cria um novo no final da tela
                 block.kill()
-                block_x = random.randint(WIDTH, int(WIDTH * 1.5))
-                block_y = random.randint(0, int(HEIGHT * 0.5))
+                block_x = random.randint(WIDTH, int(WIDTH * 3))
+                block_y = CHAO-tam_cact
                 new_block = Cacto(assets['cacto'], block_x, block_y, world_speeds)
                 all_sprites.add(new_block)
                 world_sprites.add(new_block)

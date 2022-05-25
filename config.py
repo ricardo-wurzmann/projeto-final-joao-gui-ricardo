@@ -1,5 +1,7 @@
 from os import path
+from random import randint
 import pygame
+import random
 
 # Estabelece a pasta que contem as figuras e sons
 IMG_DIR = path.join(path.dirname(__file__), 'Imagens')
@@ -20,7 +22,7 @@ BLUE = (0, 0, 255)
 YELLOW = (255, 255, 0)
 
 #imagens tela
-personagem_width = 50
+personagem_width = 140
 personagem_height = 100
 cacto_width = 10
 cacto_height = 15
@@ -39,7 +41,7 @@ QUIT = 3
 GRAVIDADE = 1.6
 
 #tamanho do pulo do jogador
-TAM_PULO = 30
+TAM_PULO = 23
 
 #distancia do pulo pro chao
 CHAO = HEIGHT/1.3
@@ -51,6 +53,9 @@ CAINDO = 2
 
 #velocidade do mundo
 world_speeds = -8
+
+#tamanho cacto
+tam_cact = random.randint(60, 125)
 
 #cactos
 INITIAL_BLOCKS = 2
