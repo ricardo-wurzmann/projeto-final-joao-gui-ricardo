@@ -2,6 +2,8 @@
 from turtle import width
 import pygame
 from config import IMG_DIR, BLACK, FPS, GAME, INIT, QUIT
+import gamescreen
+
 
 pygame.init()
 
@@ -51,6 +53,10 @@ def telafinal(tela):
         pygame.display.flip()
 
     return state
+
+screen = pygame.display.set_mode((600, 300))
+
+gamescreen.gamescreen(screen)
 
 # ===== Finalização =====
 pygame.quit()  

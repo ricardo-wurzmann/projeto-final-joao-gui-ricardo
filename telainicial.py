@@ -2,21 +2,10 @@
 from turtle import width
 import pygame
 from os import path
-from config import IMG_DIR, BLACK, FPS, GAME, QUIT
-
-pygame.init()
-
-# ----- Gera tela principal
-WIDTH = 600
-HEIGHT = 300
-window = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption('Jogo do Dinossauro')
-
-# ----- Inicia estruturas de dados
-running = True
+from config import IMG_DIR, BLACK, FPS, GAME, QUIT, WIDTH, HEIGHT
 
 # ----- Inicia assets
-def telainical(tela):
+def telainicial(window):
     clock = pygame.time.Clock()
     image = pygame.image.load(path.join(IMG_DIR,'fundo_inicial.png')).convert()
     image = pygame.transform.scale(image, (WIDTH, HEIGHT))
