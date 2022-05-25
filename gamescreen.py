@@ -3,7 +3,7 @@ import pygame
 from os import path
 from config import *
 from sprites import *
-import assets
+from assets import load_assets
 import random
 
 
@@ -15,16 +15,16 @@ def gamescreen(Screen):
     PLAYING = 0
     DONE = 1
 
+    assets = load_assets(IMG_DIR)
 
-    assets = IMG_DIR
-
-    background = assets[background]
+    # Carrega o fundo do jogo
+    background = assets['fundo']
 
     background = pygame.transform.scale(background, (WIDTH, HEIGHT))
     background_rect = background.get_rect()
 
 
-    player = Dino(dino_img)
+    player = Dino(assets['dino'])
     all_sprites = pygame.sprite.Group()
     all_sprites.add(player)
 
@@ -34,7 +34,7 @@ def gamescreen(Screen):
     for i in range(INITIAL_BLOCKS):
         block_x = random.randint(0, WIDTH)
         block_y = random.randint(0, int(HEIGHT * 0.5))
-        block = Cacto(assets[cacto_img], block_x, block_y, world_speeds)
+        block = Cacto(assets['cacto'], block_x, block_y, world_speeds)
         world_sprites.add(block)
         # Adiciona também no grupo de todos os sprites para serem atualizados e desenhados
         all_sprites.add(block)
@@ -64,7 +64,7 @@ def gamescreen(Screen):
                 block.kill()
                 block_x = random.randint(WIDTH, int(WIDTH * 1.5))
                 block_y = random.randint(0, int(HEIGHT * 0.5))
-                new_block = Cacto(assets[cacto_img], block_x, block_y, world_speeds)
+                new_block = Cacto(assets['cacto'], block_x, block_y, world_speeds)
                 all_sprites.add(new_block)
                 world_sprites.add(new_block)
 

@@ -32,9 +32,9 @@ class Dino(pygame.sprite.Sprite):
 
 
 class Cacto(pygame.sprite.Sprite):
-    def __init__(self, Cacto_img, x, y, speedx):
+    def __init__(self, img, x, y, speedx):
             pygame.sprite.Sprite.__init__(self)
-            tile_img = pygame.transform.scale(tile_img, (TILE_SIZE, TILE_SIZE))
+            self.image = img
             self.rect = self.image.get_rect()
             self.rect.x = x
             self.rect.y = y
