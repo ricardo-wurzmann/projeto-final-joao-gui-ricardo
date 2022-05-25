@@ -1,26 +1,15 @@
 from os import path
 import pygame
 
-# Estabelece a pasta que contem as figuras e sons.
-
-
+# Estabelece a pasta que contem as figuras e sons
 IMG_DIR = path.join(path.dirname(__file__), 'Imagens')
 SND_DIR = path.join(path.dirname(__file__), 'Sons')
-
-
-
 
 
 # Dados gerais do jogo.
 WIDTH = 600 # Largura da tela
 HEIGHT = 900 # Altura da tela
 FPS = 60 # Frames por segundo
-
-# Define tamanhos
-METEOR_WIDTH = 50
-METEOR_HEIGHT = 38
-SHIP_WIDTH = 50
-SHIP_HEIGHT = 38
 
 # Define algumas variáveis com as cores básicas
 WHITE = (255, 255, 255)
@@ -31,10 +20,10 @@ BLUE = (0, 0, 255)
 YELLOW = (255, 255, 0)
 
 #imagens tela
-personagem_width = 80
-personagem_height = 140
-cacto_width = 15
-cacto_height = 10
+personagem_width = 50
+personagem_height = 100
+cacto_width = 10
+cacto_height = 15
 
 INITIAL_BLOCKS = 6
 TILE_SIZE = 80
@@ -47,10 +36,10 @@ END = 2
 QUIT = 3
 
 #gravidade 
-GRAVIDADE = 2
+GRAVIDADE = 1.6
 
 #tamanho do pulo do jogador
-TAM_PULO = 3
+TAM_PULO = 30
 
 #distancia do pulo pro chao
 CHAO = HEIGHT*5/4
