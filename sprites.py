@@ -30,14 +30,15 @@ class Dino(pygame.sprite.Sprite):
             self.state = PULANDO
 
 
+
 class Cacto(pygame.sprite.Sprite):
     def __init__(self, img, x, y, speedx):
-            pygame.sprite.Sprite.__init__(self)
-            self.image = img
-            self.rect = self.image.get_rect()
-            self.rect.x = x
-            self.rect.y = y
-            self.speedx = speedx
+        pygame.sprite.Sprite.__init__(self)
+        self.image = img
+        self.rect = self.image.get_rect()
+        self.rect.x = x
+        self.rect.y = y
+        self.speedx = speedx
 
     def update(self):
         self.rect.x += self.speedx

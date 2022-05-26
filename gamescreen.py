@@ -26,6 +26,8 @@ def gamescreen(Screen):
 
     player = Dino(assets['dino'])
     all_sprites = pygame.sprite.Group()
+    all_player = pygame.sprite.Group()
+    all_player.add(player)
     all_sprites.add(player)
 
 
@@ -44,6 +46,7 @@ def gamescreen(Screen):
     state = PLAYING
     GAME = True
     #ajuste de velocidade
+
 
     while state not in [DONE, QUIT]:
         tempo.tick(FPS)
@@ -84,6 +87,13 @@ def gamescreen(Screen):
 
         
         all_sprites.draw(Screen)
+
+        colisao = pygame.sprite.spritecollide(player, world_sprites, True, pygame.sprite.collide_mask)
+        if len(colisao) != 0:
+            state = QUIT
+            player.kill()
+        
+
         
         # Depois de desenhar tudo, inverte o display.
         pygame.display.flip()

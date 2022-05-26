@@ -2,7 +2,7 @@ import pygame
 from os import path
 from config import *
 from gamescreen import gamescreen
-from telainicial import telainicial
+from telainicial import telainicial    
 
 pygame.init()
 
