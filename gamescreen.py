@@ -68,17 +68,16 @@ def gamescreen(Screen):
                 all_sprites.add(new_block)
                 world_sprites.add(new_block)
 
+
         Screen.fill((BLACK))  # Preenche com a cor preta
 
         background_rect.x += world_speeds
-        # Se o fundo saiu da janela, faz ele voltar para dentro.
+        
         if background_rect.right < 0:
             background_rect.x += background_rect.width
-        # Desenha o fundo e uma cópia para a direita.
-        # Assumimos que a imagem selecionada ocupa pelo menos o tamanho da janela.
-        # Além disso, ela deve ser cíclica, ou seja, o lado esquerdo deve ser continuação do direito.
+            
         Screen.blit(background, background_rect)
-        # Desenhamos a imagem novamente, mas deslocada da largura da imagem em x.
+
         background_rect2 = background_rect.copy()
         background_rect2.x += background_rect2.width
         Screen.blit(background, background_rect2)
