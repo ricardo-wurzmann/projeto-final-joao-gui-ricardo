@@ -5,6 +5,7 @@ from config import *
 from sprites import *
 from assets import load_assets
 import random
+import traceback
 
 
     
@@ -48,7 +49,7 @@ def gamescreen(Screen):
     #ajuste de velocidade
 
 
-    while state not in [DONE, QUIT]:
+    while state not in [END, QUIT]:
         tempo.tick(FPS)
 
         for event in pygame.event.get():
@@ -90,7 +91,7 @@ def gamescreen(Screen):
 
         colisao = pygame.sprite.spritecollide(player, world_sprites, True, pygame.sprite.collide_mask)
         if len(colisao) != 0:
-            state = QUIT
+            state = END
             player.kill()
         
 
@@ -98,6 +99,9 @@ def gamescreen(Screen):
         # Depois de desenhar tudo, inverte o display.
         pygame.display.flip()
         pygame.display.update()
+    
+    
+    return state
 
 
 

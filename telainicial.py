@@ -6,9 +6,11 @@ from config import IMG_DIR, BLACK, FPS, GAME, QUIT, WIDTH, HEIGHT
 
 # ----- Inicia assets
 def telainicial(window):
+    print('telaincial')
     clock = pygame.time.Clock()
     image = pygame.image.load(path.join(IMG_DIR,'fundo_inicial.png')).convert()
     image = pygame.transform.scale(image, (WIDTH, HEIGHT))
+
 
     font = pygame.font.SysFont(None, 48)
     text = font.render( 'Aperte Qualquer Tecla para Jogar', True, (255, 255, 255))
@@ -30,10 +32,11 @@ def telainicial(window):
 
 
         # ----- Gera saídas
-        window.fill((BLACK))  # Preenche com a cor branca
-        window.blit(text, (20, 100))
-        image.blit(text,(20,100))
+        #image.blit(text,(20,100))
         window.blit(image, (0, 0))
+        window.blit(text, (20, 100))
+        
+       
         
         # Depois de desenhar tudo, inverte o display.
         pygame.display.flip()
