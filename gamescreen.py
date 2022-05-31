@@ -8,9 +8,9 @@ from assets import load_assets
 import random
 import traceback
 
-FONT = pygame.font.SysFont("Sans", 20)
-TEXT_COLOR = (0, 0, 0)
-start_time = None
+#FONT = pygame.font.SysFont("Sans", 20)
+#TEXT_COLOR = (0, 0, 0)
+#start_time = None
 
     
 def gamescreen(Screen):
@@ -64,13 +64,13 @@ def gamescreen(Screen):
                 if event.key == pygame.K_RETURN:
                     start_time = pygame.time.get_ticks()
 
-        if start_time:
-            tempo_2 = pygame.time.get_ticks() - start_time
-            message = 'Milliseconds since enter: ' + str(tempo_2)
-            Screen.blit(FONT.render(message, True, TEXT_COLOR), (20, 20))
+        #if start_time:
+         #   tempo_2 = pygame.time.get_ticks() - start_time
+          #  message = 'Milliseconds since enter: ' + str(tempo_2)
+           # Screen.blit(FONT.render(message, True, TEXT_COLOR), (20, 20))
 
-        for second in pygame.time.get_ticks():
-           world_speeds += 0.5
+#        for second in pygame.time.get_ticks():
+ #          world_speeds += 0.5
                 
         pygame.display.update()
             
