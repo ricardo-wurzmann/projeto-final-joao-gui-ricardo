@@ -6,7 +6,6 @@ from config import IMG_DIR, BLACK, FPS, GAME, QUIT, WIDTH, HEIGHT
 
 # ----- Inicia assets
 def telainicial(window):
-    print('telaincial')
     clock = pygame.time.Clock()
     image = pygame.image.load(path.join(IMG_DIR,'fundo_inicial.png')).convert()
     image = pygame.transform.scale(image, (WIDTH, HEIGHT))

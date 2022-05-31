@@ -33,6 +33,7 @@ def gamescreen(Screen):
 
 
     world_sprites = pygame.sprite.Group()
+    t = 0
     # Cria blocos espalhados em posições aleatórias do mapa
     for i in range(INITIAL_BLOCKS):
         block_x = random.randint(0, WIDTH)
@@ -50,6 +51,8 @@ def gamescreen(Screen):
 
 
     while state not in [END, QUIT]:
+        t += 1
+        
         tempo.tick(FPS)
 
         for event in pygame.event.get():
