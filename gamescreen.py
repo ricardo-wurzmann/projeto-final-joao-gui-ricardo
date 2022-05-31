@@ -1,4 +1,5 @@
 #import bibliotecas
+from curses import window
 import pygame
 from os import path
 from config import *
@@ -7,6 +8,9 @@ from assets import load_assets
 import random
 import traceback
 
+#FONT = pygame.font.SysFont("Sans", 20)
+#TEXT_COLOR = (0, 0, 0)
+#start_time = None
 
     
 def gamescreen(Screen):
@@ -49,7 +53,6 @@ def gamescreen(Screen):
     GAME = True
     #ajuste de velocidade
 
-
     while state not in [END, QUIT]:
         t += 1
         
@@ -61,6 +64,18 @@ def gamescreen(Screen):
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_SPACE or event.key == pygame.K_UP:
                     player.pulo()
+                if event.key == pygame.K_RETURN:
+                    start_time = pygame.time.get_ticks()
+
+        #if start_time:
+         #   tempo_2 = pygame.time.get_ticks() - start_time
+          #  message = 'Milliseconds since enter: ' + str(tempo_2)
+           # Screen.blit(FONT.render(message, True, TEXT_COLOR), (20, 20))
+
+#        for second in pygame.time.get_ticks():
+ #          world_speeds += 0.5
+                
+        pygame.display.update()
             
         #Update
         all_sprites.update()
@@ -88,7 +103,6 @@ def gamescreen(Screen):
         background_rect2 = background_rect.copy()
         background_rect2.x += background_rect2.width
         Screen.blit(background, background_rect2)
-
         
         all_sprites.draw(Screen)
 
@@ -102,7 +116,7 @@ def gamescreen(Screen):
         # Depois de desenhar tudo, inverte o display.
         pygame.display.flip()
         pygame.display.update()
-    
+        tempo.tick(60)
     
     return state
 
