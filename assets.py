@@ -14,6 +14,7 @@ def load_assets(IMG_DIR):
     assets['fundo'] = pygame.transform.scale(assets['fundo'], (WIDTH, HEIGHT))
     assets['final'] = pygame.image.load(path.join(IMG_DIR, 'gameover.png')).convert()
     assets['final'] = pygame.transform.scale(assets['final'], (WIDTH, HEIGHT))
+    assets['fonte'] = pygame.font.Font(path.join(IMG_DIR, 'PressStart2P.ttf'), 28)
 
     
     return assets

@@ -58,3 +58,6 @@ tam_cact = random.randint(60, 125)
 #cactos
 INITIAL_BLOCKS = 1
 TILE_SIZE = 80
+
+#score
+score = 1
