@@ -9,8 +9,8 @@ SND_DIR = path.join(path.dirname(__file__), 'Sons')
 
 
 # Dados gerais do jogo.
-WIDTH = 600 # Largura da tela
-HEIGHT = 300 # Altura da tela
+WIDTH = 1200 # Largura da tela
+HEIGHT = 600 # Altura da tela
 FPS = 15 # Frames por segundo
 
 # Define algumas variáveis com as cores básicas
@@ -36,10 +36,10 @@ END = 2
 QUIT = 3
 
 #gravidade 
-GRAVIDADE = 2.5
+GRAVIDADE = 10
 
 #tamanho do pulo do jogador
-TAM_PULO = 30
+TAM_PULO = 75
 
 #distancia do pulo pro chao
 CHAO = HEIGHT/1.3

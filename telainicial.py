@@ -33,7 +33,7 @@ def telainicial(window):
         # ----- Gera saídas
         #image.blit(text,(20,100))
         window.blit(image, (0, 0))
-        window.blit(text, (20, 100))
+        window.blit(text, (WIDTH/4, HEIGHT/2))
         
        
         
