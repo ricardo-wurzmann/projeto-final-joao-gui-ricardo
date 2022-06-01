@@ -1,5 +1,4 @@
 #import bibliotecas
-from curses import window
 from tkinter import font
 import pygame
 from os import path
@@ -57,7 +56,7 @@ def gamescreen(Screen):
 
     while state not in [END, QUIT]:
         score = score + 1
-        if score == 30:
+        if score == 45:
             block_x = random.randint(0, WIDTH)
             block_y = random.randint(0, int(HEIGHT * 0.5))
             block = Cacto(assets['cacto'], block_x, block_y, world_speeds)
