@@ -57,8 +57,8 @@ def gamescreen(Screen):
     while state not in [END, QUIT]:
         score = score + 1
         if score == 45:
-            block_x = random.randint(0, WIDTH)
-            block_y = random.randint(0, int(HEIGHT * 0.5))
+            block_x = WIDTH - 10 #random.randint(0, WIDTH)
+            block_y = CHAO - tam_cact  #random.randint(0, int(HEIGHT * 0.5))
             block = Cacto(assets['cacto'], block_x, block_y, world_speeds)
             world_sprites.add(block)
             all_cactos.add(block)

@@ -8,7 +8,7 @@ from tela_final import telafinal
 pygame.init()
 
 # ----- Gera tela principal
-window = pygame.display.set_mode((WIDTH, HEIGHT))
+window = pygame.display.set_mode((WIDTH, HEIGHT)) 
 pygame.display.set_caption('Jogo do Dinossauro')
 
 

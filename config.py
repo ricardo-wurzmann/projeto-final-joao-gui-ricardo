@@ -36,10 +36,10 @@ END = 2
 QUIT = 3
 
 #gravidade 
-GRAVIDADE = 1.6
+GRAVIDADE = 2.5
 
 #tamanho do pulo do jogador
-TAM_PULO = 25
+TAM_PULO = 30
 
 #distancia do pulo pro chao
 CHAO = HEIGHT/1.3
@@ -52,7 +52,7 @@ CAINDO = 2
 #velocidade do mundo
 
 #tamanho cacto
-tam_cact = random.randint(60, 125)
+tam_cact = random.randint(60, 110)
 
 #cactos
 INITIAL_BLOCKS = 1
