@@ -64,6 +64,7 @@ def gamescreen(Screen):
         if len(world_sprites) == 0:
             n_cactos = random.randint(0, dif)
         if len(world_sprites) < n_cactos:
+            print(n_cactos)
             block_x = WIDTH + randint(100, 300) 
             block_y = CHAO - tam_cact  
             block = Cacto(assets['cacto'], block_x, block_y, world_speeds)
