@@ -43,25 +43,7 @@ class Cacto(pygame.sprite.Sprite):
     def update(self):
         self.rect.x += self.speedx
 
-'''class Cacto(pygame.sprite.Sprite):
-    def __init__(self, cacto_img):
-        pygame.sprite.Sprite.__init__(self)
+    def velocidade(self, speedx):
+        self.speedx = speedx
 
 
-
-        self.rect.x = random.randint(HEIGHT/2, 20)
-        self.rect.y = random.randint(HEIGHT/2, 0)
-        self.speedx = random.randint(-3, 3)
-        self.speedy = random.randint(2, 9)
-
-    def update(self):
-        # Atualizando a posição do meteoro
-        self.rect.x += self.speedx
-        self.rect.y += self.speedy
-        # Se o meteoro passar do final da tela, volta para cima e sorteia
-        # novas posições e velocidades
-        if self.rect.top > HEIGHT or self.rect.right < 0 or self.rect.left > WIDTH:
-            self.rect.x = random.randint(0, WIDTH-METEOR_WIDTH)
-            self.rect.y = random.randint(-100, -METEOR_HEIGHT)
-            self.speedx = random.randint(-3, 3)
-            self.speedy = random.randint(2, 9)'''

@@ -11,7 +11,7 @@ SND_DIR = path.join(path.dirname(__file__), 'Sons')
 # Dados gerais do jogo.
 WIDTH = 600 # Largura da tela
 HEIGHT = 300 # Altura da tela
-FPS = 60 # Frames por segundo
+FPS = 15 # Frames por segundo
 
 # Define algumas variáveis com as cores básicas
 WHITE = (255, 255, 255)
@@ -50,7 +50,6 @@ PULANDO = 1
 CAINDO = 2
 
 #velocidade do mundo
-world_speeds = -8
 
 #tamanho cacto
 tam_cact = random.randint(60, 125)
@@ -60,4 +59,3 @@ INITIAL_BLOCKS = 1
 TILE_SIZE = 80
 
 #score
-score = 1

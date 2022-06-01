@@ -1,5 +1,6 @@
 #import bibliotecas
 from curses import window
+from tkinter import font
 import pygame
 from os import path
 from config import *
@@ -16,6 +17,8 @@ def gamescreen(Screen):
 
     PLAYING = 0
     DONE = 1
+    world_speeds = -8
+
 
     assets = load_assets(IMG_DIR)
 
@@ -28,31 +31,40 @@ def gamescreen(Screen):
 
     player = Dino(assets['dino'])
     all_sprites = pygame.sprite.Group()
+    all_cactos = pygame.sprite.Group()
     all_player = pygame.sprite.Group()
     all_player.add(player)
     all_sprites.add(player)
 
+    global incrementa
+    incrementa = 0
 
     world_sprites = pygame.sprite.Group()
     t = 0
     # Cria blocos espalhados em posições aleatórias do mapa
-    for i in range(INITIAL_BLOCKS):
-        block_x = random.randint(0, WIDTH)
-        block_y = random.randint(0, int(HEIGHT * 0.5))
-        block = Cacto(assets['cacto'], block_x, block_y, world_speeds)
-        world_sprites.add(block)
-        # Adiciona também no grupo de todos os sprites para serem atualizados e desenhados
-        all_sprites.add(block)
+    
 
+    
 #repetir
     
     state = PLAYING
     GAME = True
     #ajuste de velocidade
 
+    global score
+
+    score = 1
+
     while state not in [END, QUIT]:
-        t += 1
-#        score = score * 1.8
+        score = score + 1
+        if score == 30:
+            block_x = random.randint(0, WIDTH)
+            block_y = random.randint(0, int(HEIGHT * 0.5))
+            block = Cacto(assets['cacto'], block_x, block_y, world_speeds)
+            world_sprites.add(block)
+            all_cactos.add(block)
+            # Adiciona também no grupo de todos os sprites para serem atualizados e desenhados
+            all_sprites.add(block)
         
 
 
@@ -68,19 +80,12 @@ def gamescreen(Screen):
                     start_time = pygame.time.get_ticks()
 
 
-                
-        pygame.display.update()
-
-
-        #desenha score
-        '''text_surface = assets[score].render("{:08d}".format(score), True, YELLOW)
-        text_rect = text_surface.get_rect()
-        text_rect.midtop = (WIDTH / 2,  10)
-        window.blit(text_surface, text_rect)'''
-
             
         #Update
         all_sprites.update()
+
+
+        
 
         for block in world_sprites:
             if block.rect.right < 0:
@@ -91,11 +96,22 @@ def gamescreen(Screen):
                 new_block = Cacto(assets['cacto'], block_x, block_y, world_speeds)
                 all_sprites.add(new_block)
                 world_sprites.add(new_block)
+                
 
 
         Screen.fill((BLACK))  # Preenche com a cor preta
 
+
         background_rect.x += world_speeds
+
+        if score%10 == 0:
+            world_speeds -= 1
+            for cacto in world_sprites:
+                cacto.speedx = world_speeds
+        
+            
+            
+
         
         if background_rect.right < 0:
             background_rect.x += background_rect.width
@@ -105,15 +121,22 @@ def gamescreen(Screen):
         background_rect2 = background_rect.copy()
         background_rect2.x += background_rect2.width
         Screen.blit(background, background_rect2)
+
+
+        #desenha score
+        text_surface = assets['fonte'].render("{:08d}".format(score), True, BLACK)
+        text_rect = text_surface.get_rect()
+        text_rect.midtop = (WIDTH / 2,  10)
+        Screen.blit(text_surface, text_rect)
         
         all_sprites.draw(Screen)
-
+        
+        
         colisao = pygame.sprite.spritecollide(player, world_sprites, True, pygame.sprite.collide_mask)
         if len(colisao) != 0:
             state = END
             player.kill()
         
-
         
         # Depois de desenhar tudo, inverte o display.
         pygame.display.flip()
