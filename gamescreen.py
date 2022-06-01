@@ -41,11 +41,8 @@ def gamescreen(Screen):
     world_sprites = pygame.sprite.Group()
     t = 0
     # Cria blocos espalhados em posições aleatórias do mapa
-    
 
-    
-#repetir
-    
+ 
     state = PLAYING
     GAME = True
     #ajuste de velocidade
@@ -53,19 +50,34 @@ def gamescreen(Screen):
     global score
 
     score = 1
+    score_min = 45
+    n_cactos = 0
+    dif = 0
+    lista = []
+    i = 0
 
     while state not in [END, QUIT]:
         score = score + 1
-        if score == 45:
-            block_x = WIDTH - 10 #random.randint(0, WIDTH)
-            block_y = CHAO - tam_cact  #random.randint(0, int(HEIGHT * 0.5))
+        dif += score // 50
+        if dif >= 3:
+            dif = 3
+        if len(world_sprites) == 0:
+            n_cactos = random.randint(0, dif)
+        if len(world_sprites) < n_cactos:
+            block_x = WIDTH + randint(100, 300) 
+            block_y = CHAO - tam_cact  
             block = Cacto(assets['cacto'], block_x, block_y, world_speeds)
             world_sprites.add(block)
             all_cactos.add(block)
             # Adiciona também no grupo de todos os sprites para serem atualizados e desenhados
             all_sprites.add(block)
-        
+            
+            if block.rect.x - world_sprites.sprites()[-1].rect.x >= 10 and block.rect.x - world_sprites.sprites()[-1].rect.x <= 500:
+                world_sprites.remove(block)
+                
 
+    
+            
 
         tempo.tick(FPS)
 
@@ -85,16 +97,6 @@ def gamescreen(Screen):
 
 
         
-
-        for block in world_sprites:
-            if block.rect.right < 0:
-                # Destrói o bloco e cria um novo no final da tela
-                block.kill()
-                block_x = random.randint(WIDTH, int(WIDTH * 3))
-                block_y = CHAO-tam_cact
-                new_block = Cacto(assets['cacto'], block_x, block_y, world_speeds)
-                all_sprites.add(new_block)
-                world_sprites.add(new_block)
                 
 
 
@@ -102,9 +104,12 @@ def gamescreen(Screen):
 
 
         background_rect.x += world_speeds
+        i = 0
 
         if score%10 == 0:
-            world_speeds -= 1
+            if world_speeds >= (-63):
+                world_speeds -= 1
+                
             for cacto in world_sprites:
                 cacto.speedx = world_speeds
         

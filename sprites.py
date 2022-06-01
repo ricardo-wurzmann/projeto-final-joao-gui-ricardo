@@ -42,6 +42,8 @@ class Cacto(pygame.sprite.Sprite):
 
     def update(self):
         self.rect.x += self.speedx
+        if self.rect.x < -50:
+            self.kill()
 
     def velocidade(self, speedx):
         self.speedx = speedx
