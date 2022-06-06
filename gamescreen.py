@@ -87,6 +87,7 @@ def gamescreen(Screen):
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_SPACE or event.key == pygame.K_UP:
                     player.pulo()
+                    assets['sompulo'].play()
                 if event.key == pygame.K_RETURN:
                     start_time = pygame.time.get_ticks()
 
@@ -140,6 +141,7 @@ def gamescreen(Screen):
         if len(colisao) != 0:
             state = END
             player.kill()
+            assets['somfim'].play()
         
         
         # Depois de desenhar tudo, inverte o display.
