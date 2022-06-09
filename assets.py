@@ -16,5 +16,12 @@ def load_assets(IMG_DIR):
     assets['final'] = pygame.transform.scale(assets['final'], (WIDTH, HEIGHT))
     assets['fonte'] = pygame.font.Font(path.join(IMG_DIR, 'PressStart2P.ttf'), 28)
 
+
+
+    assets['sompulo'] = pygame.mixer.Sound(os.path.join(IMG_DIR, 'sompulo.mp3'))
+    assets['somfim'] = pygame.mixer.Sound(os.path.join(IMG_DIR, 'somfim.mp3'))
+    assets['somfundo'] = pygame.mixer.Sound(os.path.join(IMG_DIR, 'somfundo.mp3'))
+    
+
     
     return assets

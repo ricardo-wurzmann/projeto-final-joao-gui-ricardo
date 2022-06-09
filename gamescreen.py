@@ -64,7 +64,6 @@ def gamescreen(Screen):
         if len(world_sprites) == 0:
             n_cactos = random.randint(0, dif)
         if len(world_sprites) < n_cactos:
-            print(n_cactos)
             block_x = WIDTH + randint(100, 300) 
             block_y = CHAO - tam_cact  
             block = Cacto(assets['cacto'], block_x, block_y, world_speeds)
@@ -73,7 +72,7 @@ def gamescreen(Screen):
             # Adiciona também no grupo de todos os sprites para serem atualizados e desenhados
             all_sprites.add(block)
             
-            if block.rect.x - world_sprites.sprites()[-1].rect.x >= 10 and block.rect.x - world_sprites.sprites()[-1].rect.x <= 500:
+            if block.rect.x - world_sprites.sprites()[-1].rect.x >= 10 and block.rect.x - world_sprites.sprites()[-1].rect.x <= 600:
                 world_sprites.remove(block)
                 
 
@@ -88,6 +87,7 @@ def gamescreen(Screen):
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_SPACE or event.key == pygame.K_UP:
                     player.pulo()
+                    assets['sompulo'].play()
                 if event.key == pygame.K_RETURN:
                     start_time = pygame.time.get_ticks()
 
@@ -141,6 +141,7 @@ def gamescreen(Screen):
         if len(colisao) != 0:
             state = END
             player.kill()
+            assets['somfim'].play()
         
         
         # Depois de desenhar tudo, inverte o display.

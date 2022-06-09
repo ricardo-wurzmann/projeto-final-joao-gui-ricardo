@@ -6,6 +6,7 @@ from telainicial import telainicial
 from tela_final import telafinal
 
 pygame.init()
+pygame.mixer.init()
 
 # ----- Gera tela principal
 window = pygame.display.set_mode((WIDTH, HEIGHT)) 
@@ -23,7 +24,6 @@ while state != QUIT:
         state = telafinal(window)
     else:
         state = QUIT
-
 
 
 pygame.quit()
