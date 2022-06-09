@@ -12,4 +12,4 @@ O jogo "Dinossauro Maluco" têm seu código divido em 7 abas. Ao dar início no 
 3- A terceira aba, 'gamescreen.py', é onde está propriamente toda a montagem do jogo. Isto é, o looping principal, os modos de como os obstáculos aparecem, o carregamento da imagem de jogo e a definição da colisão com os obstáculos e suas consequências.
 4- A quarta aba, 'main.py', é a aba utilizada para rodar o jogo. Junta-se todas as montagens das outras abas. Assim, ao dar Run, o processo do jogo será iniciado. 
 5- A quinta aba, 'sprites.py', é utilizada para criar as classes e as sprites que serão utilizadas no jogo. 
-6 e 7- Configurações da imagem da tela inicial e da tela final de jogo. Respectivamente com os nomes 'telainicial.py' e 'tela_final.py'
+6- e 7- Configurações da imagem da tela inicial e da tela final de jogo. Respectivamente com os nomes 'telainicial.py' e 'tela_final.py'
