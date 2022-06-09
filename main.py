@@ -14,7 +14,7 @@ pygame.display.set_caption('Jogo do Dinossauro')
 
 
 state = INIT
-while state != QUIT:
+while state != QUIT: 
     if state == INIT:
         state = telainicial(window)
     elif state == GAME:
